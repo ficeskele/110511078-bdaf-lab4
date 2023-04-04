@@ -11,11 +11,9 @@
     - Constructor needs to become a separate callable function ; that is , an **initialization** function need to be constructed.
      
  - **Some reasons**： 
- 
-    ```bash
     1. Because when we use proxy to point to the implementation contract, the original constructer function won't work out and we can't get the initial value.
     2. When we use factory to deploy, it's convenient to initialize the value of new proxy.
-     ```
+    
 - A **proxy contract** with a few important specifications:
     - Use unstructured storage to store “owner” and “implementation”. As in [here](https://blog.openzeppelin.com/upgradeability-using-unstructured-storage/)
     - The “owner” should be able to update the implementation of the proxy.
