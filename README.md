@@ -3,13 +3,10 @@
 ![image](https://user-images.githubusercontent.com/124324882/229817162-6671c38e-5bb7-4af3-8485-101090e78c18.png)
 
 
-## Useful Resource
-- [https://github.com/dragonfly-xyz/useful-solidity-patterns/tree/main/patterns/basic-proxies](https://github.com/dragonfly-xyz/useful-solidity-patterns/tree/main/patterns/basic-proxies)
-- [https://github.com/dragonfly-xyz/useful-solidity-patterns/tree/main/patterns/initializing-upgradeable-contracts](https://github.com/dragonfly-xyz/useful-solidity-patterns/tree/main/patterns/initializing-upgradeable-contracts)
-
 ## Contracts intro:
-
-- A **SafeUpgradeable** implementation contract, but **in Proxy pattern**.
+- A **NewSimplesafe** implementation contract; basically, this contract is a modified version of Simplesafe in Lab3.
+    it can take 0.1 percent tax from every withdrawing 
+- A **InitSimplesafe** implementation contract, but **in Proxy pattern**.
     - Constructor needs to become a separate callable function.
 - A **proxy contract** ([ref](https://fravoll.github.io/solidity-patterns/proxy_delegate.html)1, [ref](https://solidity-by-example.org/app/upgradeable-proxy/)2) with a few important specifications:
     - Use unstructured storage to store “owner” and “implementation”. As in [here](https://blog.openzeppelin.com/upgradeability-using-unstructured-storage/)
@@ -22,6 +19,11 @@
         - Deploys a proxy, points the proxy to the current Safe Implementation. Initializes the proxy so that the message sender is the owner of the new Safe.
     - `function deploySafe() external`
         - Deploys the original Safe contract. Note that you might need to modify the Safe contract so that the original caller of the `deploySafe` contract will be the owner of the deployed "Safe” contract.
+
+
+## Useful Resource
+- [https://github.com/dragonfly-xyz/useful-solidity-patterns/tree/main/patterns/basic-proxies](https://github.com/dragonfly-xyz/useful-solidity-patterns/tree/main/patterns/basic-proxies)
+- [https://github.com/dragonfly-xyz/useful-solidity-patterns/tree/main/patterns/initializing-upgradeable-contracts](https://github.com/dragonfly-xyz/useful-solidity-patterns/tree/main/patterns/initializing-upgradeable-contracts)
 
 
 ## Coverage Result
