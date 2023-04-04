@@ -26,6 +26,7 @@
     - `function deploySafe() external`
         - Deploys the original Safe contract. Note that you might need to modify the Safe contract so that the original caller of the `deploySafe` contract will be the owner of the deployed "Safe” contract.
 ---
+## Additional tools 
 - Use Solidity Test Coverage to see how well covered is your tests (Note that high coverage does not necessarily mean high quality tests)
     - [https://www.npmjs.com/package/solidity-coverage](https://www.npmjs.com/package/solidity-coverage)
 - Use Hardhat gas reporter to assess the gas.
