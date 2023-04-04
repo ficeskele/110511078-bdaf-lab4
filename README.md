@@ -25,7 +25,11 @@
         - Deploys a proxy, points the proxy to the current Safe Implementation. Initializes the proxy so that the message sender is the owner of the new Safe.
     - `function deploySafe() external`
         - Deploys the original Safe contract. Note that you might need to modify the Safe contract so that the original caller of the `deploySafe` contract will be the owner of the deployed "Safe” contract.
-
+---
+- Use Solidity Test Coverage to see how well covered is your tests (Note that high coverage does not necessarily mean high quality tests)
+    - [https://www.npmjs.com/package/solidity-coverage](https://www.npmjs.com/package/solidity-coverage)
+- Use Hardhat gas reporter to assess the gas.
+    - [https://www.npmjs.com/package/hardhat-gas-reporter](https://www.npmjs.com/package/hardhat-gas-reporter)
 
 ## Useful Resource
 - [https://github.com/dragonfly-xyz/useful-solidity-patterns/tree/main/patterns/basic-proxies](https://github.com/dragonfly-xyz/useful-solidity-patterns/tree/main/patterns/basic-proxies)
