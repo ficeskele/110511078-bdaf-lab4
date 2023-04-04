@@ -1,17 +1,13 @@
-# 110511078-bdaf-lab4
+# Proxies, Proxies everywhere
+
+![image](https://user-images.githubusercontent.com/124324882/229817162-6671c38e-5bb7-4af3-8485-101090e78c18.png)
+
 
 ## Useful Resource
-
 - [https://github.com/dragonfly-xyz/useful-solidity-patterns/tree/main/patterns/basic-proxies](https://github.com/dragonfly-xyz/useful-solidity-patterns/tree/main/patterns/basic-proxies)
 - [https://github.com/dragonfly-xyz/useful-solidity-patterns/tree/main/patterns/initializing-upgradeable-contracts](https://github.com/dragonfly-xyz/useful-solidity-patterns/tree/main/patterns/initializing-upgradeable-contracts)
 
-## Modify the Safe contract
-
-- The contract should have an owner.
-- The contract now takes a 0.1% tax. That means, if an address deposited 1000 ATokens, the address can only withdraw 999 ATokens. The remaining 1 AToken will be kept in the contract and ready to be withdrawn by the owner.
-- Implement a `function takeFee(address token)` and only the owner of the contract can call it. The owner should get the token fees that are accumulated in the contract.
-
-## Write 3 contracts:
+## Contracts intro:
 
 - A **SafeUpgradeable** implementation contract, but **in Proxy pattern**.
     - Constructor needs to become a separate callable function.
@@ -26,14 +22,6 @@
         - Deploys a proxy, points the proxy to the current Safe Implementation. Initializes the proxy so that the message sender is the owner of the new Safe.
     - `function deploySafe() external`
         - Deploys the original Safe contract. Note that you might need to modify the Safe contract so that the original caller of the `deploySafe` contract will be the owner of the deployed "Safe” contract.
-
-## Write tests
-
-- Make sure the tax calculations are done correctly in the modified Safe contract.
-- the tests should indicate that the system works as intended. E.g.
-    - the caller of deploySafe is the owner of the deployed Safe contract
-    - the caller of deploySafeProxy is the owner of the deployed Proxy.
-    - After `updateImplementation` is being called, a newly deployed proxy with `deploySafeProxy()` points to the new implementation instead of the old one.
 
 
 ## Coverage Result
