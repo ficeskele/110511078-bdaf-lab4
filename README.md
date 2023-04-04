@@ -10,7 +10,8 @@
 - A **InitSimplesafe** implementation contract, but **in Proxy pattern**.
     - Constructor needs to become a separate callable function ; that is , an **initialization** function need to be constructed.
      
- ### **Some reasons**： 
+ - **Some reasons**： 
+ 
     ```bash
     1. Because when we use proxy to point to the implementation contract, the original constructer function won't work out and we can't get the initial value.
     2. When we use factory to deploy, it's convenient to initialize the value of new proxy.
