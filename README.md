@@ -9,10 +9,10 @@
     - it can take 0.1 percent tax from every withdrawing, and only owner can take fee accumulated in contract.
 - A **InitSimplesafe** implementation contract, but **in Proxy pattern**.
     - Constructor needs to become a separate callable function ; that is , an **initialization** function need to be constructed.
-    - Some reasons： 
+    - **Some reasons**： 
     - 1. Because when we use proxy to point to the implementation contract, the original constructer function won't work out and we can't get the initial value.
     - 2. When we use factory to deploy, it's convenient to initialize the value of new proxy.
-- A **proxy contract** ([ref](https://fravoll.github.io/solidity-patterns/proxy_delegate.html)1, [ref](https://solidity-by-example.org/app/upgradeable-proxy/)2) with a few important specifications:
+- A **proxy contract** with a few important specifications:
     - Use unstructured storage to store “owner” and “implementation”. As in [here](https://blog.openzeppelin.com/upgradeability-using-unstructured-storage/)
     - The “owner” should be able to update the implementation of the proxy.
 - A **SafeFactory contract**: a factory that deploys proxies that point to the **SafeUpgradeable** implementation.
@@ -28,6 +28,7 @@
 ## Useful Resource
 - [https://github.com/dragonfly-xyz/useful-solidity-patterns/tree/main/patterns/basic-proxies](https://github.com/dragonfly-xyz/useful-solidity-patterns/tree/main/patterns/basic-proxies)
 - [https://github.com/dragonfly-xyz/useful-solidity-patterns/tree/main/patterns/initializing-upgradeable-contracts](https://github.com/dragonfly-xyz/useful-solidity-patterns/tree/main/patterns/initializing-upgradeable-contracts)
+- Proxy ([ref](https://fravoll.github.io/solidity-patterns/proxy_delegate.html)1, [ref](https://solidity-by-example.org/app/upgradeable-proxy/)2)
 
 
 ## Coverage Result
